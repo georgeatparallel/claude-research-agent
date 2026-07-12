@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="334" viewBox="0 0 640 334">
+  <rect width="640" height="334" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <rect width="640" height="36" rx="10" fill="#161b22"/>
+  <rect y="26" width="640" height="10" fill="#161b22"/>
+  <circle cx="20" cy="18" r="6" fill="#ff5f57"/><circle cx="40" cy="18" r="6" fill="#febc2e"/><circle cx="60" cy="18" r="6" fill="#28c840"/>
+  <text x="320" y="22" fill="#8b949e" font-family="Consolas,Menlo,monospace" font-size="12" text-anchor="middle">python cli.py "state of AI agents in 2026" — example run</text>
+  <text x="22" y="58" fill="#8b949e" font-family="Consolas,Menlo,monospace" font-size="13">$ python cli.py "state of AI agents in 2026" --depth medium</text>
+  <text x="22" y="79" fill="#c9d1d9" font-family="Consolas,Menlo,monospace" font-size="13">🔍 Researching: state of AI agents in 2026 (depth: medium)</text>
+  <text x="22" y="100" fill="#d29922" font-family="Consolas,Menlo,monospace" font-size="13">→ search_web("AI agents production 2026")      5 results</text>
+  <text x="22" y="121" fill="#d29922" font-family="Consolas,Menlo,monospace" font-size="13">→ fetch_page(anthropic.com/engineering/...)   5 071 chars</text>
+  <text x="22" y="142" fill="#d29922" font-family="Consolas,Menlo,monospace" font-size="13">→ save_note("tool use became the dominant pattern")</text>
+  <text x="22" y="163" fill="#d29922" font-family="Consolas,Menlo,monospace" font-size="13">→ search_web("multi-agent orchestration adoption")</text>
+  <text x="22" y="184" fill="#d29922" font-family="Consolas,Menlo,monospace" font-size="13">→ fetch_page(...)  → save_note(...)</text>
+  <text x="22" y="205" fill="#8b949e" font-family="Consolas,Menlo,monospace" font-size="13">============================================================</text>
+  <text x="22" y="226" fill="#3fb950" font-weight="bold" font-family="Consolas,Menlo,monospace" font-size="13">## Executive summary</text>
+  <text x="22" y="247" fill="#3fb950" font-family="Consolas,Menlo,monospace" font-size="13">AI agents moved from demos to production in 2025–2026...</text>
+  <text x="22" y="268" fill="#3fb950" font-weight="bold" font-family="Consolas,Menlo,monospace" font-size="13">## Key facts · ## Trends · ## Sources (with URLs)</text>
+  <text x="22" y="289" fill="#c9d1d9" font-family="Consolas,Menlo,monospace" font-size="13">📝 Notes saved: 6</text>
+</svg>

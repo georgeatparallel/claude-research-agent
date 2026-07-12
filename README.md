@@ -4,6 +4,8 @@ An autonomous web-research agent built on the **Claude API with multi-step tool 
 
 Part of my portfolio: **[all 49 projects](https://github.com/artesuavee/portfolio)** · [live showcase](https://artesuavee.github.io/portfolio/)
 
+![Example run](demo.svg)
+
 ## The problem
 
 "Research topic X" means an hour of googling, skimming a dozen tabs and pasting fragments into a doc. An LLM alone can't do it — its knowledge is frozen at the training cutoff and it can't cite live sources. The agent needs real search, real page reading, and a disciplined report format.
