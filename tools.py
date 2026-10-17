@@ -1,4 +1,4 @@
-"""Real web tools for the research agent: DuckDuckGo search + page fetching + notes."""
+"""Real web tools for the research agent: web search + page fetching + notes."""
 from __future__ import annotations
 
 import json
@@ -9,6 +9,8 @@ import requests
 from bs4 import BeautifulSoup
 from ddgs import DDGS
 
+from config import settings
+
 _UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -18,7 +20,27 @@ _notes: list[dict] = []
 
 
 def search_web(query: str, max_results: int = 5) -> str:
-    """Search the web via DuckDuckGo. Returns JSON with a list of results."""
+    """Search with the configured provider. Returns JSON with a list of results."""
+    if settings.search_provider == "parallel":
+        try:
+            from parallel_search import search
+
+            results = search(query, max_results)
+        except ImportError:
+            return json.dumps({
+                "query": query,
+                "error": "Parallel search requires: pip install -r requirements-parallel.txt",
+            })
+        except Exception as exc:  # noqa: BLE001
+            return json.dumps({"query": query, "error": f"search failed: {exc}"})
+        return json.dumps({"query": query, "results": results}, ensure_ascii=False)
+
+    if settings.search_provider != "duckduckgo":
+        return json.dumps({
+            "query": query,
+            "error": "Unknown SEARCH_PROVIDER. Choose duckduckgo or parallel.",
+        })
+
     try:
         raw = DDGS().text(query, max_results=max_results)
     except Exception as exc:  # noqa: BLE001

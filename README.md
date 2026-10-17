@@ -44,6 +44,32 @@ cp .env.example .env        # add your ANTHROPIC_API_KEY
 python cli.py "state of AI agents in 2026" --depth medium
 ```
 
+### Optional Parallel search
+
+Use [Parallel Search MCP](https://docs.parallel.ai/integrations/mcp/search-mcp)
+for free web search in Fast mode, with no Parallel account or API key:
+
+```bash
+pip install -r requirements-parallel.txt
+# Set SEARCH_PROVIDER=parallel in .env, or select it for one run:
+SEARCH_PROVIDER=parallel python cli.py "state of AI agents in 2026" --depth medium
+```
+
+The existing `search_web` tool returns the same titles, URLs and snippets, using
+Parallel's relevant excerpts as snippets. DuckDuckGo remains the default; set
+`SEARCH_PROVIDER=duckduckgo` to switch back. Page fetching and notes keep their
+existing behavior. The optional backend uses the MCP SDK's Streamable HTTP
+transport to `https://search.parallel.ai/mcp`, with a 15-second search timeout.
+Search errors (including free-tier rate limits) are returned to the agent without
+switching providers. The Claude API key from the quick start is still required
+for research reports.
+
+To try only the search tool without a Claude API key:
+
+```bash
+SEARCH_PROVIDER=parallel python -c 'from tools import search_web; print(search_web("Python asyncio documentation", max_results=3))'
+```
+
 ## Example run
 
 ```

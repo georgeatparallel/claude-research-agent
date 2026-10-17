@@ -17,6 +17,7 @@ class Settings:
     anthropic_api_key: str = os.getenv("ANTHROPIC_API_KEY", "")
     model: str = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
     max_tokens: int = int(os.getenv("ANTHROPIC_MAX_TOKENS", "1024"))
+    search_provider: str = os.getenv("SEARCH_PROVIDER", "duckduckgo").strip().lower()
 
     def require_api_key(self) -> str:
         if not self.anthropic_api_key:
